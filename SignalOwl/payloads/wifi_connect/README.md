@@ -10,7 +10,8 @@ done
 
 The extensions get sourced after boot during the last bit of the execute_payload function, right before actually executing (if exists) [Note, then, that even if you have no payload present the extensions should still get sourced at boot presuming you don't alter that behavior].
 In a default setup, wifi_connect.sh is the only extension present (and as of this writing the only extension contributed to their GitHub) so... if you aren't writing a ton of your own extensions it's not a /ton/ of trouble to just add them to your payload script(s) as needed as I've done. 
-For the specific case of getting the Owl online you /could/, of course, write a custom wpa_supplicant config to get it on a network at boot, outside of the payload, but /I/ personally had trouble getting that to work and you may not want that to execute on boot no matter what. You choose what's important there and the effort you want to go to.
 If you /are/ intending to write lots of custom extensions and /need/ support for sourcing them then you'll need to find and fix that particular bug. I wanted to get things going, so for now this is how my Owl behaves.
+
+For the specific case of getting the Owl online you /could/, of course, write a custom wpa_supplicant config to get it on a network at boot, outside of the payload, but /I/ personally had trouble getting that to work and you may not want that to execute on boot no matter what. You choose what's important there and the effort you want to go to.
 
 I hope this writeup helps speed along your troubleshooting if you've found yourself frusted with the Owl as I have. Happy hacking.
